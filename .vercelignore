@@ -1,7 +1,7 @@
-# Dependencies
-node_modules/
-client/node_modules/
-server/node_modules/
+# Server files (not needed for static deployment)
+server/
+start-server.js
+start.js
 
 # Development files
 .env
@@ -14,20 +14,8 @@ server/node_modules/
 *.log
 logs/
 
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
 # Coverage directory
 coverage/
-
-# Build outputs (except client/build)
-build/
-dist/
-server/build/
-server/dist/
 
 # Development tools
 .vscode/
@@ -36,15 +24,3 @@ server/dist/
 # OS files
 .DS_Store
 Thumbs.db
-
-# Git
-.git/
-.gitignore
-
-# Documentation
-README.md
-
-# Server files (not needed for static deployment)
-server/
-start-server.js
-start.js
