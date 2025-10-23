@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Package, Truck, Shield, CheckCircle, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const ProductsContainer = styled.div`
   min-height: 100vh;
@@ -254,9 +254,8 @@ const QualityText = styled.p`
 `;
 
 function Products() {
-  const [productsData, setProductsData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const { language } = useLanguage();
+  const productsData = companyData.products;
 
   const content = {
     mn: {
@@ -276,25 +275,6 @@ function Products() {
   };
 
   const currentContent = content[language] || content.mn;
-
-  useEffect(() => {
-    const fetchProductsData = async () => {
-      try {
-        const response = await axios.get('/api/products');
-        setProductsData(response.data);
-      } catch (error) {
-        console.error('Error fetching products data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProductsData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   const productIcons = [
     { icon: <Package size={40} />, gradient: '#10b981, #059669' },

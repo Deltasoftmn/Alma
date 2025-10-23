@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Users, Award, ArrowRight, Send } from 'lucide-react';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const JobsContainer = styled.div`
   min-height: 100vh;
@@ -242,31 +242,7 @@ const SubmitButton = styled.button`
 `;
 
 function Jobs() {
-  const [jobsData, setJobsData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchJobsData = async () => {
-      try {
-        const response = await axios.get('/api/jobs');
-        setJobsData(response.data);
-      } catch (error) {
-        console.error('Error fetching jobs data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJobsData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!jobsData) {
-    return <div>No data available</div>;
-  }
+  const jobsData = companyData.jobs;
 
   const hrPolicy = jobsData?.hrPolicy || {};
 

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Shield, Users } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import Particles from '../components/Particles';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const HomeContainer = styled.div`
   min-height: 100vh;
@@ -387,24 +387,8 @@ const AdvantageText = styled.p`
 
 
 function Home() {
-  const [homeData, setHomeData] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { language } = useLanguage();
-
-  useEffect(() => {
-    const fetchHomeData = async () => {
-      try {
-        const response = await axios.get('/api/home');
-        setHomeData(response.data);
-      } catch (error) {
-        console.error('Error fetching home data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchHomeData();
-  }, []);
+  const homeData = companyData.home;
 
   const content = {
     mn: {
@@ -448,10 +432,6 @@ function Home() {
   };
 
   const currentContent = content[language] || content.mn;
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -1,28 +1,15 @@
 {
   "name": "alma-chem-trade-website",
   "version": "1.0.0",
-  "description": "Alma Chem Trade LLC Introduction Website",
-  "main": "server/index.js",
+  "description": "Alma Chem Trade LLC Introduction Website - Static Frontend",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server/index.js",
-    "client": "cd client && npm start",
+    "start": "cd client && npm start",
     "build": "cd client && npm ci && npm run build",
     "install-client": "cd client && npm install",
     "vercel-build": "cd client && npm ci && npm run build",
     "postinstall": "cd client && npm install"
   },
-  "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1",
-    "concurrently": "^8.2.2"
-  },
-  "keywords": ["react", "nodejs", "website", "mongolian", "chemical-trading"],
+  "keywords": ["react", "static", "website", "mongolian", "chemical-trading"],
   "author": "Alma Chem Trade LLC",
   "license": "MIT"
 }

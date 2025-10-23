@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const ContactContainer = styled.div`
   min-height: 100vh;
@@ -320,27 +320,7 @@ const HoursText = styled.p`
 `;
 
 function Contact() {
-  const [contactData, setContactData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchContactData = async () => {
-      try {
-        const response = await axios.get('/api/contact');
-        setContactData(response.data);
-      } catch (error) {
-        console.error('Error fetching contact data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchContactData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const contactData = companyData.contact;
 
   const containerVariants = {
     hidden: { opacity: 0 },

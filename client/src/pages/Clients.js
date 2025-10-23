@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Building2, Users, Users2, Award, Star, CheckCircle } from 'lucide-react';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const ClientsContainer = styled.div`
   min-height: 100vh;
@@ -275,27 +275,7 @@ const StatLabel = styled.div`
 `;
 
 function Clients() {
-  const [clientsData, setClientsData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchClientsData = async () => {
-      try {
-        const response = await axios.get('/api/clients');
-        setClientsData(response.data);
-      } catch (error) {
-        console.error('Error fetching clients data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchClientsData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const clientsData = companyData.clients;
 
   const clientIcons = [
     { icon: <Building2 size={40} />, gradient: '#8b5cf6, #7c3aed' },

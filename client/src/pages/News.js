@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Globe, Shield, Building, Calendar, ArrowRight } from 'lucide-react';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const NewsContainer = styled.div`
   min-height: 100vh;
@@ -158,26 +158,7 @@ const LoadingSpinner = styled.div`
 `;
 
 function News() {
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchNews();
-  }, []);
-
-  const fetchNews = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get('/api/news');
-      setNews(response.data);
-    } catch (err) {
-      setError('Мэдээ ачаалахад алдаа гарлаа');
-      console.error('Error fetching news:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const news = companyData.news;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -193,29 +174,6 @@ function News() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
-
-  if (loading) {
-    return (
-      <NewsContainer>
-        <NewsContent>
-          <LoadingSpinner>Мэдээ ачаалж байна...</LoadingSpinner>
-        </NewsContent>
-      </NewsContainer>
-    );
-  }
-
-  if (error) {
-    return (
-      <NewsContainer>
-        <NewsContent>
-          <NewsHeader>
-            <NewsTitle>Мэдээ</NewsTitle>
-            <NewsSubtitle>{error}</NewsSubtitle>
-          </NewsHeader>
-        </NewsContent>
-      </NewsContainer>
-    );
-  }
 
   return (
     <NewsContainer>

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Target, Eye, History, Award, Users, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const AboutContainer = styled.div`
   min-height: 100vh;
@@ -475,24 +475,8 @@ const ValueText = styled.p`
 `;
 
 function About() {
-  const [aboutData, setAboutData] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { language } = useLanguage();
-
-  useEffect(() => {
-    const fetchAboutData = async () => {
-      try {
-        const response = await axios.get('/api/about');
-        setAboutData(response.data);
-      } catch (error) {
-        console.error('Error fetching about data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAboutData();
-  }, []);
+  const aboutData = companyData.about;
 
   const content = {
     mn: {
@@ -532,10 +516,6 @@ function About() {
   };
 
   const currentContent = content[language] || content.mn;
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },

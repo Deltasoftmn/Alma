@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { 
@@ -13,7 +13,7 @@ import {
   Star
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import axios from 'axios';
+import { companyData } from '../data/companyData';
 
 const ServicesContainer = styled.div`
   min-height: 100vh;
@@ -317,24 +317,8 @@ const CTAButton = styled(motion.button)`
 `;
 
 function Services() {
-  const [servicesData, setServicesData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const { language } = useLanguage();
-
-  useEffect(() => {
-    const fetchServicesData = async () => {
-      try {
-        const response = await axios.get('/api/services');
-        setServicesData(response.data);
-      } catch (error) {
-        console.error('Error fetching services data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchServicesData();
-  }, []);
+  const servicesData = companyData.services;
 
   const content = {
     mn: {
@@ -358,10 +342,6 @@ function Services() {
   };
 
   const currentContent = content[language] || content.mn;
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   const serviceIcons = [
     { icon: <Truck size={32} />, gradient: '#3b82f6, #1d4ed8' },

@@ -1,16 +1,5 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Company data in Mongolian
-const companyData = {
+// Centralized company data - extracted from API files
+export const companyData = {
   home: {
     title: "Alma Chem Trade LLC",
     subtitle: "Химийн бодисын импорт, зөвлөгөөний үйлчилгээ",
@@ -154,49 +143,3 @@ const companyData = {
     email: "Info@khimiconsulting.mn"
   }
 };
-
-// API Routes
-app.get('/api/home', (req, res) => {
-  res.json(companyData.home);
-});
-
-app.get('/api/about', (req, res) => {
-  res.json(companyData.about);
-});
-
-app.get('/api/services', (req, res) => {
-  res.json(companyData.services);
-});
-
-app.get('/api/products', (req, res) => {
-  res.json(companyData.products);
-});
-
-app.get('/api/clients', (req, res) => {
-  res.json(companyData.clients);
-});
-
-app.get('/api/news', (req, res) => {
-  res.json(companyData.news);
-});
-
-app.get('/api/jobs', (req, res) => {
-  res.json(companyData.jobs);
-});
-
-app.get('/api/contact', (req, res) => {
-  res.json(companyData.contact);
-});
-
-// Serve static files from React build
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-  });
-}
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
