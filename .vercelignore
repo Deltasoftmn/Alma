@@ -1,26 +1,8 @@
-# Server files (not needed for static deployment)
-server/
-start-server.js
-start.js
-
-# Development files
-.env
+node_modules
+server
+*.log
+.DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Logs
-*.log
-logs/
-
-# Coverage directory
-coverage/
-
-# Development tools
-.vscode/
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db

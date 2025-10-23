@@ -169,7 +169,7 @@ function News() {
   const fetchNews = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/news');
+      const response = await axios.get('/api/news');
       setNews(response.data);
     } catch (err) {
       setError('Мэдээ ачаалахад алдаа гарлаа');
