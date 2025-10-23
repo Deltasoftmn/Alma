@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import CardNav from './CardNav';
 import logo from '../assets/alma.png';

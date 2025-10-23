@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Users, Award, ArrowRight, Send } from 'lucide-react';
+import { Users, Award, Send } from 'lucide-react';
 import { companyData } from '../data/companyData';
 
 const JobsContainer = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Globe, Shield, Building, Calendar, ArrowRight } from 'lucide-react';
+import { Building, Calendar, ArrowRight } from 'lucide-react';
 import { companyData } from '../data/companyData';
 
 const NewsContainer = styled.div`
@@ -148,14 +148,6 @@ const LoadMoreButton = styled(motion.button)`
   }
 `;
 
-const LoadingSpinner = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  color: #2596be;
-  font-size: 1.1rem;
-`;
 
 function News() {
   const news = companyData.news;
