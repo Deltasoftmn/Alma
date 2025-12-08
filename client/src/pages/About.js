@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Target, Eye, History, Award, Users, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { companyData } from '../data/companyData';
 
 const AboutContainer = styled.div`
   min-height: 100vh;
@@ -476,37 +475,36 @@ const ValueText = styled.p`
 
 function About() {
   const { language } = useLanguage();
-  const aboutData = companyData.about;
 
   const content = {
     mn: {
       heroTitle: "Бидний тухай",
-      heroSubtitle: "Alma Chem Trade LLC - Монголын химийн салбарын тэргүүлэгч компани",
+      heroSubtitle: "Салбарын туршлага, Монголд зориулсан найдвартай химийн шийдлүүд.",
       introTitle: "Танилцуулга",
       historyTitle: "Компанийн түүх",
       missionVisionTitle: "Эрхэм зорилго болон алсын хараа",
       advantagesTitle: "Манай компанийн давуу тал",
       valuesTitle: "Үнэт зүйлс",
-      history: aboutData?.history || "Бид олон улсын үйлдвэрлэгчдтэй шууд хамтын ажиллагаа тогтоож, Монголын нөхцөлд тохирсон оновчтой нийлүүлэлтийн шийдлийг хэрэгжүүлсэн.",
-      mission: aboutData?.mission || "Монгол улсад химийн импорт болон зөвлөгөөний үйлчилгээний салбарт шинэчлэгч, тэргүүлэгч мэргэжлийн компани болж, уул уурхай болон аж үйлдвэрийн салбарын тогтвортой хөгжлийг дэмжих.",
-      vision: aboutData?.vision || "Монгол улсад химийн импорт болон зөвлөгөөний үйлчилгээний салбарт шинэчлэгч, тэргүүлэгч мэргэжлийн компани болж, уул уурхай болон аж үйлдвэрийн салбарын тогтвортой хөгжлийг дэмжих.",
+      history: "Alma Chem Trade LLC нь салбарын гүнзгий туршлага дээр суурилсан компани. Манай баг уул уурхай, үйлдвэрлэлийн үйл ажиллагаа, химийн үйлчилгээний өргөн туршлагатай тул харилцагчид маань анхны өдрөөсөө эхлэн найдвартай, мэдлэгтэй, мэргэжлийн дэмжлэг авдаг. Alba-Chem LLP-ийн охин компани болохын хувьд бид Евро-Ази дахь 20 гаруй жилийн баталгаатай амжилтад тулгуурлаж байна. Alba-Chem LLP нь барилгын зуурмаг, будаг болон лак, асфальт бетон, битумын эмульсийн үйлдвэрлэлд хэрэглэгддэг өндөр чанарын химийн нэмэлтийн нэр хүндтэй ханган нийлүүлэгч юм. Энэ хуримтлагдсан туршлага, олон улсын сүлжээнд тулгуурлан Alma Chem Trade LLC нь Монголын уул уурхай, үйлдвэрлэлийн салбарт найдвартай химийн шийдэл, зориулагдсан үйлчилгээг хүргэхэд үнэнч байдаг.",
+      mission: "Чанартай бүтээгдэхүүн, найдвартай үйлчилгээ, бат бөх түншлэлээр үнэ цэнийг хүргэж, уул уурхай болон үйлдвэрлэлийн үйл ажиллагааг аюулгүй, үр ашигтай, сааталгүй явуулахыг хангах.",
+      vision: "Монголын уул уурхай, зам барилга, барилга болон үйлдвэрлэлийн салбарын хөгжилд өндөр чанартай, найдвартай бүтээгдэхүүн, шинэлэг шийдлээр түлхэц өгч, итгэлтэй, ирээдүйгээ харсан ханган нийлүүлэгч байхаар зорьдог.",
       values: [
-        { title: "Харилцагч төвтэй", text: "Үйлчлүүлэгчдийн хэрэгцээг эрхэмлэн, тэдний амжилтад хувь нэмэр оруулах" },
-        { title: "Чанар", text: "Олон улсын стандартад нийцсэн өндөр чанарын бүтээгдэхүүн, үйлчилгээ" },
-        { title: "Инноваци", text: "Шинэ технологи, шинэлэг шийдлийг ашиглан үйлчлүүлэгчдэд илүү сайн үйлчилгээ үзүүлэх" }
+        { title: "Харилцагч төвтэй", text: "Харилцагчдын хэрэгцээг эрхэмлэн, тэдний амжилтад хувь нэмэр оруулах." },
+        { title: "Чанар", text: "Олон улсын стандартад нийцсэн өндөр чанартай бүтээгдэхүүн, үйлчилгээ." },
+        { title: "Инноваци", text: "Шинэ технологи, шинэлэг шийдлээр илүү сайн үйлчилгээ хүргэх." }
       ]
     },
     en: {
       heroTitle: "About Us",
-      heroSubtitle: "Alma Chem Trade LLC - Leading Company in Mongolia's Chemical Sector",
+      heroSubtitle: "Industry expertise and trusted chemical solutions for Mongolia.",
       introTitle: "Introduction",
       historyTitle: "Company History",
       missionVisionTitle: "Mission & Vision",
       advantagesTitle: "Our Company's Advantages",
       valuesTitle: "Our Values",
-      history: "We have established direct partnerships with international manufacturers and implemented optimal supply solutions suitable for Mongolian conditions.",
-      mission: "To become an innovative, leading professional company in Mongolia's chemical import and consulting services sector, supporting the sustainable development of mining and industrial sectors.",
-      vision: "To become an innovative, leading professional company in Mongolia's chemical import and consulting services sector, supporting the sustainable development of mining and industrial sectors.",
+      history: "Alma Chem Trade LLC is a company built on a strong foundation of industry expertise. Our team brings extensive experience in mining, industrial operations, and chemical services, ensuring our clients receive reliable, knowledgeable, and professional support from day one. As a proud subsidiary of Alba-Chem LLP, we benefit from more than 20 years of proven success in the Euro-Asian market. Alba-Chem LLP is a recognized supplier of high-quality chemical additives used in the production of building mixtures, paints and varnishes, asphalt concrete, and bitumen emulsions. Leveraging this long-standing experience and international network, Alma Chem Trade LLC is committed to delivering trusted chemical solutions and dedicated service to Mongolia's mining and industrial sectors.",
+      mission: "To deliver value through quality products, dependable service, and strong partnerships, ensuring safe, efficient, and uninterrupted mining and industrial operations.",
+      vision: "To drive the advancement of Mongolia's mining, road construction, construction, and industrial sectors through high-quality, reliable products and innovative solutions, positioning ourselves as a trusted and forward-looking supplier.",
       values: [
         { title: "Customer-Centric", text: "Valuing customer needs and contributing to their success" },
         { title: "Quality", text: "High-quality products and services that meet international standards" },

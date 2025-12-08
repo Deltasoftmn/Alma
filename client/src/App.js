@@ -13,6 +13,13 @@ import Clients from './pages/Clients';
 import News from './pages/News';
 import Jobs from './pages/Jobs';
 import Contact from './pages/Contact';
+import Values from './pages/Values';
+import MarketSectors from './pages/MarketSectors';
+import ProductBenefits from './pages/ProductBenefits';
+import Sustainability from './pages/Sustainability';
+import SocialResponsibility from './pages/SocialResponsibility';
+import EnvironmentalCommitment from './pages/EnvironmentalCommitment';
+import WhyWorkWithUs from './pages/WhyWorkWithUs';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -55,6 +62,13 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/product-benefits" element={<ProductBenefits />} />
+              <Route path="/values" element={<Values />} />
+              <Route path="/sectors" element={<MarketSectors />} />
+              <Route path="/sustainability" element={<Sustainability />} />
+              <Route path="/social-responsibility" element={<SocialResponsibility />} />
+              <Route path="/environmental-commitment" element={<EnvironmentalCommitment />} />
+              <Route path="/why-work-with-us" element={<WhyWorkWithUs />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/news" element={<News />} />
               <Route path="/jobs" element={<Jobs />} />

@@ -213,6 +213,12 @@ function Footer() {
         { path: '/about', label: 'Бидний тухай' },
         { path: '/services', label: 'Үйлчилгээ' },
         { path: '/products', label: 'Бүтээгдэхүүн' },
+        { path: '/product-benefits', label: 'Бүтээгдэхүүний давуу тал' },
+        { path: '/values', label: 'Үнэт зүйлс' },
+        { path: '/sectors', label: 'Зах зээлийн салбар' },
+        { path: '/why-work-with-us', label: 'Яагаад бидэнтэй' },
+        { path: '/sustainability', label: 'Тогтвортой хөгжил' },
+        { path: '/social-responsibility', label: 'Нийгмийн хариуцлага' },
         { path: '/clients', label: 'Харилцагчид' },
         { path: '/news', label: 'Мэдээ' },
         { path: '/jobs', label: 'Ажлын байр' },
@@ -223,6 +229,12 @@ function Footer() {
         { path: '/about', label: 'About Us' },
         { path: '/services', label: 'Services' },
         { path: '/products', label: 'Products' },
+        { path: '/product-benefits', label: 'Product Benefits' },
+        { path: '/values', label: 'Our Values' },
+        { path: '/sectors', label: 'Market Sectors' },
+        { path: '/why-work-with-us', label: 'Why Work With Us' },
+        { path: '/sustainability', label: 'Sustainability' },
+        { path: '/social-responsibility', label: 'Social Responsibility' },
         { path: '/clients', label: 'Clients' },
         { path: '/news', label: 'News' },
         { path: '/jobs', label: 'Careers' },
@@ -237,9 +249,10 @@ function Footer() {
       description: "Монголын химийн салбарын тэргүүлэгч компани. Чанарын баталгаатай химийн бүтээгдэхүүн, мэргэжлийн зөвлөгөө болон технологийн шийдэл үзүүлдэг.",
       linksTitle: "Холбоос",
       contactTitle: "Холбоо барих",
-      address: "Монгол Улс, Улаанбаатар 14220, Сүхбаатар дүүрэг, 1-р хороо, Элчин сайдын гудамж, Скай Плаза бизнес төв, 9 тоот",
-      phone: "+976 88042323",
-      email: "Info@khimiconsulting.mn",
+      headOffice: "Төв оффис: Улаанбаатар, Монгол",
+      address: "Скай Плаза бизнес төв, D хэсэг, 1-р давхар, Элчин сайдын 9-р гудамж, 13-р хороолол, 1-р хороо, Сүхбаатар дүүрэг, Улаанбаатар 14220, Монгол",
+      phone: "+97688042323",
+      email: "info@almachem.mn",
       copyright: "© 2024 Alma Chem Trade LLC. Бүх эрх хуулиар хамгаалагдсан.",
       backToTop: "Дээшээ буцах"
     },
@@ -247,9 +260,10 @@ function Footer() {
       description: "Leading company in Mongolia's chemical sector. We provide quality chemical products, professional consulting, and technological solutions.",
       linksTitle: "Links",
       contactTitle: "Contact Us",
-      address: "Mongolia, Ulaanbaatar 14220, Sukhbaatar District, 1st Khoroo, Ambassador Street, Sky Plaza Business Center, No. 9",
-      phone: "+976 88042323",
-      email: "Info@khimiconsulting.mn",
+      headOffice: "Head Office: Ulaanbaatar, Mongolia",
+      address: "Sky Plaza Business Center, Section D, 1st Floor, 9 Embassy Street, 13th Microdistrict, 1st Khoroo, Sukhbaatar District, Ulaanbaatar 14220, Mongolia",
+      phone: "+97688042323",
+      email: "info@almachem.mn",
       copyright: "© 2024 Alma Chem Trade LLC. All rights reserved.",
       backToTop: "Back to Top"
     }
@@ -315,15 +329,19 @@ function Footer() {
             <ContactInfo>
               <ContactItem>
                 <MapPin size={16} />
-                <span>{language === 'en' ? 'Ulaanbaatar, Sky Plaza' : 'Улаанбаатар, Скай Плаза'}</span>
+                <span>{currentContent.headOffice}</span>
+              </ContactItem>
+              <ContactItem>
+                <MapPin size={16} />
+                <span>{currentContent.address}</span>
               </ContactItem>
               <ContactItem>
                 <Phone size={16} />
-                <span>+976 88042323</span>
+                <span>{currentContent.phone}</span>
               </ContactItem>
               <ContactItem>
                 <Mail size={16} />
-                <span>Info@khimiconsulting.mn</span>
+                <span>{currentContent.email}</span>
               </ContactItem>
             </ContactInfo>
           </FooterSection>

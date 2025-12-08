@@ -14,7 +14,7 @@ const getCardNavItems = (language) => {
         textColor: "#fff",
         links: [
           { label: "Алтны уурхай", href: "/services", ariaLabel: "Алтны уурхайн үйлчилгээ" },
-          { label: "Химийн бодис", href: "/products", ariaLabel: "Химийн бодисын үйлчилгээ" }
+          { label: "Химийн бүтээгдэхүүн", href: "/products", ariaLabel: "Химийн бүтээгдэхүүний үйлчилгээ" }
         ]
       },
       {
@@ -23,7 +23,9 @@ const getCardNavItems = (language) => {
         textColor: "#fff",
         links: [
           { label: "Алтны уурхайн хими", href: "/products", ariaLabel: "Алтны уурхайн химийн бүтээгдэхүүн" },
-          { label: "Химийн шинжилгээ", href: "/services", ariaLabel: "Химийн шинжилгээний үйлчилгээ" }
+          { label: "Химийн шинжилгээ", href: "/services", ariaLabel: "Химийн шинжилгээний үйлчилгээ" },
+          { label: "Бүтээгдэхүүний давуу тал", href: "/product-benefits", ariaLabel: "Бүтээгдэхүүний давуу тал" },
+          { label: "Зах зээлийн салбар", href: "/sectors", ariaLabel: "Зах зээлийн салбарууд" }
         ]
       },
       {
@@ -31,7 +33,11 @@ const getCardNavItems = (language) => {
         bgColor: "#271E37", 
         textColor: "#fff",
         links: [
+          { label: "Үнэт зүйлс", href: "/values", ariaLabel: "Компанийн үнэт зүйлс" },
           { label: "Бидний тухай", href: "/about", ariaLabel: "Компанийн тухай" },
+          { label: "Яагаад бидэнтэй", href: "/why-work-with-us", ariaLabel: "Яагаад бидэнтэй ажиллах вэ" },
+          { label: "Тогтвортой хөгжил", href: "/sustainability", ariaLabel: "Тогтвортой хөгжил" },
+          { label: "Нийгмийн хариуцлага", href: "/social-responsibility", ariaLabel: "Нийгмийн хариуцлага" },
           { label: "Мэдээ", href: "/news", ariaLabel: "Компанийн мэдээ" },
           { label: "Ажлын байр", href: "/jobs", ariaLabel: "Ажлын байр" }
         ]
@@ -53,7 +59,9 @@ const getCardNavItems = (language) => {
         textColor: "#fff",
         links: [
           { label: "Mining Chemicals", href: "/products", ariaLabel: "Mining chemical products" },
-          { label: "Chemical Analysis", href: "/services", ariaLabel: "Chemical analysis services" }
+          { label: "Chemical Analysis", href: "/services", ariaLabel: "Chemical analysis services" },
+          { label: "Product Benefits", href: "/product-benefits", ariaLabel: "Product benefits" },
+          { label: "Market Sectors", href: "/sectors", ariaLabel: "Market sectors" }
         ]
       },
       {
@@ -61,7 +69,11 @@ const getCardNavItems = (language) => {
         bgColor: "#271E37", 
         textColor: "#fff",
         links: [
+          { label: "Our Values", href: "/values", ariaLabel: "Our values" },
           { label: "About Us", href: "/about", ariaLabel: "About our company" },
+          { label: "Why Work With Us", href: "/why-work-with-us", ariaLabel: "Why work with us" },
+          { label: "Sustainability", href: "/sustainability", ariaLabel: "Sustainability" },
+          { label: "Social Responsibility", href: "/social-responsibility", ariaLabel: "Social Responsibility" },
           { label: "News", href: "/news", ariaLabel: "Company news" },
           { label: "Careers", href: "/jobs", ariaLabel: "Job opportunities" }
         ]
