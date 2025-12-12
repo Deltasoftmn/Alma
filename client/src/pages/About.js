@@ -492,7 +492,10 @@ function About() {
         { title: "Харилцагч төвтэй", text: "Харилцагчдын хэрэгцээг эрхэмлэн, тэдний амжилтад хувь нэмэр оруулах." },
         { title: "Чанар", text: "Олон улсын стандартад нийцсэн өндөр чанартай бүтээгдэхүүн, үйлчилгээ." },
         { title: "Инноваци", text: "Шинэ технологи, шинэлэг шийдлээр илүү сайн үйлчилгээ хүргэх." }
-      ]
+      ],
+      historyVisualTitle: "Амжилттай түүх",
+      historyVisualText: "Олон улсын туршлагатай үйлдвэрлэгчдтэй хамтран ажиллаж, Монголын зах зээлд найдвартай байр сууриа тогтоосон.",
+      goalTitle: "Манай зорилго"
     },
     en: {
       heroTitle: "About Us",
@@ -509,7 +512,10 @@ function About() {
         { title: "Customer-Centric", text: "Valuing customer needs and contributing to their success" },
         { title: "Quality", text: "High-quality products and services that meet international standards" },
         { title: "Innovation", text: "Using new technologies and innovative solutions to provide better services to customers" }
-      ]
+      ],
+      historyVisualTitle: "Successful History",
+      historyVisualText: "We have partnered with experienced international manufacturers and established a reliable position in the Mongolian market.",
+      goalTitle: "Our Goal"
     }
   };
 
@@ -594,7 +600,7 @@ function About() {
               <HighlightIcon>
                 <Target size={40} />
               </HighlightIcon>
-              <HighlightTitle>{language === 'en' ? 'Our Goal' : 'Манай зорилго'}</HighlightTitle>
+              <HighlightTitle>{currentContent.goalTitle}</HighlightTitle>
                     <HighlightText>
                       {currentContent.mission}
                     </HighlightText>
@@ -662,10 +668,9 @@ function About() {
               <VisualIcon>
                 <History size={40} />
               </VisualIcon>
-              <VisualTitle>Амжилттай түүх</VisualTitle>
+              <VisualTitle>{currentContent.historyVisualTitle}</VisualTitle>
               <VisualText>
-                Олон улсын туршлагатай үйлдвэрлэгчдтэй хамтран ажиллаж, 
-                Монголын зах зээлд найдвартай байр сууриа тогтоосон.
+                {currentContent.historyVisualText}
               </VisualText>
             </HistoryVisual>
           </HistoryGrid>
@@ -727,7 +732,7 @@ function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Бидний үнэт зүйлс
+            {currentContent.valuesTitle}
           </SectionTitle>
           
           <ValuesGrid>

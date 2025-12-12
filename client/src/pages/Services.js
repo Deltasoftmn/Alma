@@ -388,6 +388,17 @@ function Services() {
       ['Чанарын сайжруулалт', 'Процессын оновчтой болгох', 'Технологийн сонголт']
     ];
 
+  const serviceDescriptions = language === 'en'
+    ? [
+      'Chemical substance import',
+      'Consulting on safe chemical use, storage, and warehouse management',
+      'Organization of laboratory research, analysis, and testing work',
+      'Research on mining production and testing technologies',
+      'Complete cyanide leaching solution for gold extraction (planning, equipment selection, installation, technological management, monitoring)',
+      'Optimal production process solutions based on laboratory and test results, product quality, and technology selection improvements'
+    ]
+    : servicesData;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -450,7 +461,7 @@ function Services() {
                   {serviceTitles[index] || service}
                 </ServiceTitle>
                 <ServiceDescription>
-                  {service}
+                  {serviceDescriptions[index] || service}
                 </ServiceDescription>
                 <ServiceFeatures>
                   {serviceFeatures[index]?.map((feature, featureIndex) => (

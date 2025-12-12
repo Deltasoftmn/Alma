@@ -263,14 +263,38 @@ function Products() {
       heroSubtitle: "Манай компанийн санал болгож буй химийн бүтээгдэхүүнүүд",
       productsTitle: "Манай бүтээгдэхүүнүүд",
       qualityTitle: "Чанарын баталгаа",
-      qualityText: "Бид зөвхөн олон улсын стандартад нийцсэн, найдвартай үйлдвэрлэгчдээс бүтээгдэхүүн импортолдог."
+      qualityText: "Бид зөвхөн олон улсын стандартад нийцсэн, найдвартай үйлдвэрлэгчдээс бүтээгдэхүүн импортолдог.",
+      categoryMining: "Уул уурхай",
+      categoryMiningText: "Алт, зэс, төмрийн хүдэр олборлолтод ашиглагдах химийн бодисууд, катализатор, флотацийн бодис",
+      categoryProcessing: "Боловсруулалт",
+      categoryProcessingText: "Хүдрийн баяжуулалт, металлургийн процессод ашиглагдах химийн бодисууд, катализатор",
+      categorySafety: "Аюулгүй байдал",
+      categorySafetyText: "Химийн бодисын аюулгүй хадгалалт, тээвэрлэлт, хэрэглээний стандарт шийдэл",
+      qualityInternational: "Олон улсын стандарт",
+      qualityInternationalText: "ISO, ASTM болон бусад олон улсын стандартын дагуу чанарын баталгаатай бүтээгдэхүүн",
+      qualityAnalysis: "Шинжилгээний тайлан",
+      qualityAnalysisText: "Лабораторийн шинжилгээний дэлгэрэнгүй тайлан, чанарын баталгаа, техникийн мэдээлэл",
+      qualitySafety: "Аюулгүй байдал",
+      qualitySafetyText: "Бүтээгдэхүүний аюулгүй хадгалалт, тээвэрлэлт, хэрэглээний бүрэн дэмжлэг"
     },
     en: {
       heroTitle: "Products",
       heroSubtitle: "Chemical products offered by our company",
       productsTitle: "Our Products",
       qualityTitle: "Quality Assurance",
-      qualityText: "We only import products from reliable manufacturers that meet international standards."
+      qualityText: "We only import products from reliable manufacturers that meet international standards.",
+      categoryMining: "Mining",
+      categoryMiningText: "Chemical substances, catalysts, and flotation agents used in gold, copper, and iron ore extraction",
+      categoryProcessing: "Processing",
+      categoryProcessingText: "Chemical substances and catalysts used in ore beneficiation and metallurgical processes",
+      categorySafety: "Safety",
+      categorySafetyText: "Standard solutions for safe storage, transportation, and use of chemical substances",
+      qualityInternational: "International Standards",
+      qualityInternationalText: "Quality-assured products according to ISO, ASTM and other international standards",
+      qualityAnalysis: "Analysis Reports",
+      qualityAnalysisText: "Detailed laboratory analysis reports, quality assurance, and technical information",
+      qualitySafety: "Safety",
+      qualitySafetyText: "Complete support for safe storage, transportation, and use of products"
     }
   };
 
@@ -282,32 +306,67 @@ function Products() {
     { icon: <Shield size={40} />, gradient: '#8b5cf6, #7c3aed' }
   ];
 
-  const productTitles = [
-    'Уул уурхайн химийн бодисууд',
-    'Боловсруулах үйлдвэрийн бүтээгдэхүүн',
-    'Агуулах, савлагаа, тээврийн шийдэл'
-  ];
-
-  const productFeatures = [
-    [
-      'Олон улсын стандартын дагуу',
-      'Чанарын баталгаатай',
-      'Аюулгүй хадгалалт',
-      'Мэргэжлийн зөвлөгөө'
-    ],
-    [
-      'Дэвшилтэт технологи',
-      'Өндөр үр ашиг',
-      'Байгаль орчинд ээлтэй',
-      'Удаан эдэлгээ'
-    ],
-    [
-      'Стандарт савлагаа',
-      'Аюулгүй тээвэрлэлт',
-      'Туршлагатай баг',
-      'Хурдан хүргэлт'
+  const productTitles = language === 'en'
+    ? [
+      'Mining Chemical Substances',
+      'Processing Plant Products',
+      'Warehouse, Storage, and Transportation Solutions'
     ]
-  ];
+    : [
+      'Уул уурхайн химийн бодисууд',
+      'Боловсруулах үйлдвэрийн бүтээгдэхүүн',
+      'Агуулах, савлагаа, тээврийн шийдэл'
+    ];
+
+  const productDescriptions = language === 'en'
+    ? [
+      'Chemical substances used in mining',
+      'Products used in processing plants',
+      'Standard solutions for warehouse, storage, and transportation'
+    ]
+    : productsData;
+
+  const productFeatures = language === 'en'
+    ? [
+      [
+        'According to international standards',
+        'Quality assured',
+        'Safe storage',
+        'Professional consulting'
+      ],
+      [
+        'Advanced technology',
+        'High efficiency',
+        'Environmentally friendly',
+        'Long durability'
+      ],
+      [
+        'Standard packaging',
+        'Safe transportation',
+        'Experienced team',
+        'Fast delivery'
+      ]
+    ]
+    : [
+      [
+        'Олон улсын стандартын дагуу',
+        'Чанарын баталгаатай',
+        'Аюулгүй хадгалалт',
+        'Мэргэжлийн зөвлөгөө'
+      ],
+      [
+        'Дэвшилтэт технологи',
+        'Өндөр үр ашиг',
+        'Байгаль орчинд ээлтэй',
+        'Удаан эдэлгээ'
+      ],
+      [
+        'Стандарт савлагаа',
+        'Аюулгүй тээвэрлэлт',
+        'Туршлагатай баг',
+        'Хурдан хүргэлт'
+      ]
+    ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -351,7 +410,7 @@ function Products() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Манай бүтээгдэхүүн
+            {currentContent.productsTitle}
           </SectionTitle>
           
           <ProductsGrid>
@@ -371,7 +430,7 @@ function Products() {
                   {productTitles[index] || product}
                 </ProductTitle>
                 <ProductDescription>
-                  {product}
+                  {productDescriptions[index] || product}
                 </ProductDescription>
                 <ProductFeatures>
                   {productFeatures[index]?.map((feature, featureIndex) => (
@@ -409,10 +468,9 @@ function Products() {
               <CategoryIcon>
                 <Package size={24} />
               </CategoryIcon>
-              <CategoryTitle>Уул уурхай</CategoryTitle>
+              <CategoryTitle>{currentContent.categoryMining}</CategoryTitle>
               <CategoryText>
-                Алт, зэс, төмрийн хүдэр олборлолтод ашиглагдах 
-                химийн бодисууд, катализатор, флотацийн бодис
+                {currentContent.categoryMiningText}
               </CategoryText>
             </CategoryCard>
 
@@ -426,10 +484,9 @@ function Products() {
               <CategoryIcon>
                 <Truck size={24} />
               </CategoryIcon>
-              <CategoryTitle>Боловсруулалт</CategoryTitle>
+              <CategoryTitle>{currentContent.categoryProcessing}</CategoryTitle>
               <CategoryText>
-                Хүдрийн баяжуулалт, металлургийн процессод 
-                ашиглагдах химийн бодисууд, катализатор
+                {currentContent.categoryProcessingText}
               </CategoryText>
             </CategoryCard>
 
@@ -443,10 +500,9 @@ function Products() {
               <CategoryIcon>
                 <Shield size={24} />
               </CategoryIcon>
-              <CategoryTitle>Аюулгүй байдал</CategoryTitle>
+              <CategoryTitle>{currentContent.categorySafety}</CategoryTitle>
               <CategoryText>
-                Химийн бодисын аюулгүй хадгалалт, 
-                тээвэрлэлт, хэрэглээний стандарт шийдэл
+                {currentContent.categorySafetyText}
               </CategoryText>
             </CategoryCard>
           </ProductsGrid>
@@ -475,10 +531,9 @@ function Products() {
               <QualityIcon>
                 <Star size={40} />
               </QualityIcon>
-              <QualityTitle>Олон улсын стандарт</QualityTitle>
+              <QualityTitle>{currentContent.qualityInternational}</QualityTitle>
               <QualityText>
-                ISO, ASTM болон бусад олон улсын стандартын 
-                дагуу чанарын баталгаатай бүтээгдэхүүн
+                {currentContent.qualityInternationalText}
               </QualityText>
             </QualityCard>
 
@@ -491,10 +546,9 @@ function Products() {
               <QualityIcon>
                 <CheckCircle size={40} />
               </QualityIcon>
-              <QualityTitle>Шинжилгээний тайлан</QualityTitle>
+              <QualityTitle>{currentContent.qualityAnalysis}</QualityTitle>
               <QualityText>
-                Лабораторийн шинжилгээний дэлгэрэнгүй тайлан, 
-                чанарын баталгаа, техникийн мэдээлэл
+                {currentContent.qualityAnalysisText}
               </QualityText>
             </QualityCard>
 
@@ -507,10 +561,9 @@ function Products() {
               <QualityIcon>
                 <Shield size={40} />
               </QualityIcon>
-              <QualityTitle>Аюулгүй байдал</QualityTitle>
+              <QualityTitle>{currentContent.qualitySafety}</QualityTitle>
               <QualityText>
-                Бүтээгдэхүүний аюулгүй хадгалалт, тээвэрлэлт, 
-                хэрэглээний бүрэн дэмжлэг
+                {currentContent.qualitySafetyText}
               </QualityText>
             </QualityCard>
           </QualityGrid>
