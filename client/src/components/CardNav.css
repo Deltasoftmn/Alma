@@ -11,7 +11,7 @@
 
 .card-nav {
   display: block;
-  height: 60px;
+  height: 80px;
   padding: 0;
   background-color: white;
   border: 0.5px solid rgba(255, 255, 255, 0.1);
@@ -27,7 +27,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,7 +78,7 @@
 }
 
 .logo {
-  height: 28px;
+  height: 75px;
 }
 
 .language-selector {
@@ -124,7 +124,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 80px;
   bottom: 0;
   padding: 0.4rem 0.6rem 0.6rem;
   display: flex;
