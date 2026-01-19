@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Target, Eye, History, Award, Users, Globe } from 'lucide-react';
+import { Target, Eye, History, Award, Users, Globe, Shield } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutContainer = styled.div`
@@ -485,17 +485,19 @@ function About() {
       missionVisionTitle: "Эрхэм зорилго болон алсын хараа",
       advantagesTitle: "Манай компанийн давуу тал",
       valuesTitle: "Үнэт зүйлс",
-      history: "Alma Chem Trade LLC нь салбарын гүнзгий туршлага дээр суурилсан компани. Манай баг уул уурхай, үйлдвэрлэлийн үйл ажиллагаа, химийн үйлчилгээний өргөн туршлагатай тул харилцагчид маань анхны өдрөөсөө эхлэн найдвартай, мэдлэгтэй, мэргэжлийн дэмжлэг авдаг. Alba-Chem LLP-ийн охин компани болохын хувьд бид Евро-Ази дахь 20 гаруй жилийн баталгаатай амжилтад тулгуурлаж байна. Alba-Chem LLP нь барилгын зуурмаг, будаг болон лак, асфальт бетон, битумын эмульсийн үйлдвэрлэлд хэрэглэгддэг өндөр чанарын химийн нэмэлтийн нэр хүндтэй ханган нийлүүлэгч юм. Энэ хуримтлагдсан туршлага, олон улсын сүлжээнд тулгуурлан Alma Chem Trade LLC нь Монголын уул уурхай, үйлдвэрлэлийн салбарт найдвартай химийн шийдэл, зориулагдсан үйлчилгээг хүргэхэд үнэнч байдаг.",
-      mission: "Чанартай бүтээгдэхүүн, найдвартай үйлчилгээ, бат бөх түншлэлээр үнэ цэнийг хүргэж, уул уурхай болон үйлдвэрлэлийн үйл ажиллагааг аюулгүй, үр ашигтай, сааталгүй явуулахыг хангах.",
-      vision: "Монголын уул уурхай, зам барилга, барилга болон үйлдвэрлэлийн салбарын хөгжилд өндөр чанартай, найдвартай бүтээгдэхүүн, шинэлэг шийдлээр түлхэц өгч, итгэлтэй, ирээдүйгээ харсан ханган нийлүүлэгч байхаар зорьдог.",
+      history: "Алма Кем Трейд ХХК нь 2025 онд байгуулагдан, уул уурхайн тоног төхөөрөмж, сэлбэг хэрэгсэл, химийн бодисын худалдаа, ханган нийлүүлэлтийн чиглэлээр үйл ажиллагаагаа өргөжүүлэн, салбартаа өргөн хүрээтэй, цогц үйлчилгээ үзүүлэхээр зорьж байна. Түүнчлэн манай компани нь дэлхийд тэргүүлэгч химийн бодис үйлдвэрлэгч компаниудын албан ёсны дилер эрхтэйгээр үйл ажиллагаагаа явуулж, хэрэглэгчиддээ олон улсын стандартад нийцсэн чанартай бүтээгдэхүүн, найдвартай үйлчилгээ хүргэхээр ажиллаж байна.",
+      mission: "Монголын химийн бодисын импорт, зөвлөх үйлчилгээний салбарт шинийг санаачлагч, мэргэжлийн тэргүүлэгч компани болж, уул уурхай болон аж үйлдвэрийн тогтвортой хөгжлийг дэмжихийг эрхэм зорилгоо болгож байна.",
+      vision: "Монголын уул уурхайн хөгжилд чанартай, найдвартай бүтээгдэхүүн, инновацийн шийдлээр хувь нэмэр оруулан салбарын тэргүүлэх нийлүүлэгч байна.",
       values: [
-        { title: "Харилцагч төвтэй", text: "Харилцагчдын хэрэгцээг эрхэмлэн, тэдний амжилтад хувь нэмэр оруулах." },
-        { title: "Чанар", text: "Олон улсын стандартад нийцсэн өндөр чанартай бүтээгдэхүүн, үйлчилгээ." },
-        { title: "Инноваци", text: "Шинэ технологи, шинэлэг шийдлээр илүү сайн үйлчилгээ хүргэх." }
+        { title: "Чанар", text: "Бид хэрэглэгчдийн шаардлагад нийцсэн баталгаат, олон улсын стандарт хангасан бүтээгдэхүүн нийлүүлнэ." },
+        { title: "Найдвартай байдал", text: "Харилцагч төвтэй байдлыг эрхэмлэнэ. Харилцагчдын хэрэгцээг ойлгож, хамгийн тохирсон шийдлүүдийг санал болгоно." },
+        { title: "Инноваци", text: "Ямагт шинэлэг санааг эрэлхийлж, салбартаа шинэлэг, бодит үр бүтээдтэй үйл ажиллагааг нэвтрүүлнэ." },
+        { title: "Аюулгүй ажиллагаа", text: "Мэдлэг чадварыг тасралтгүй хөгжүүлж, ил тод байдлыг дэмжсэн хөдөлмөрийн аюулгүй байдал, эрүүл ахуйг хангасан ажлын байраар хангана." }
       ],
       historyVisualTitle: "Амжилттай түүх",
       historyVisualText: "Олон улсын туршлагатай үйлдвэрлэгчдтэй хамтран ажиллаж, Монголын зах зээлд найдвартай байр сууриа тогтоосон.",
-      goalTitle: "Манай зорилго"
+      goalTitle: "Манай зорилго",
+      goalText: "Бид харилцагчдаа чанартай бүтээгдэхүүнээр хангаж, нийлүүлэлт болон уян хатан хамтын ажиллагааны нөхцөлөөр үйл ажиллагааг нь тасралтгүй дэмжихийг эрхэм зорилгоо болгосон."
     },
     en: {
       heroTitle: "About Us",
@@ -509,13 +511,15 @@ function About() {
       mission: "To deliver value through quality products, dependable service, and strong partnerships, ensuring safe, efficient, and uninterrupted mining and industrial operations.",
       vision: "To drive the advancement of Mongolia's mining, road construction, construction, and industrial sectors through high-quality, reliable products and innovative solutions, positioning ourselves as a trusted and forward-looking supplier.",
       values: [
-        { title: "Customer-Centric", text: "Valuing customer needs and contributing to their success" },
-        { title: "Quality", text: "High-quality products and services that meet international standards" },
-        { title: "Innovation", text: "Using new technologies and innovative solutions to provide better services to customers" }
+        { title: "Quality", text: "We supply guaranteed products that meet customer requirements and international standards" },
+        { title: "Reliability", text: "We value customer-centricity. We understand customer needs and offer the most suitable solutions" },
+        { title: "Innovation", text: "We constantly seek innovative ideas and introduce innovative, truly effective operations in our sector" },
+        { title: "Safe Operations", text: "We continuously develop knowledge and skills, ensuring a workplace with transparent labor safety and health standards" }
       ],
       historyVisualTitle: "Successful History",
       historyVisualText: "We have partnered with experienced international manufacturers and established a reliable position in the Mongolian market.",
-      goalTitle: "Our Goal"
+      goalTitle: "Our Goal",
+      goalText: "Our goal is to provide quality products and flexible terms of cooperation, and to continuously support our customers' activities."
     }
   };
 
@@ -538,12 +542,12 @@ function About() {
 
   const values = [
     {
-      icon: <Users size={24} />,
+      icon: <Award size={24} />,
       title: currentContent.values[0].title,
       text: currentContent.values[0].text
     },
     {
-      icon: <Award size={24} />,
+      icon: <Users size={24} />,
       title: currentContent.values[1].title,
       text: currentContent.values[1].text
     },
@@ -551,6 +555,11 @@ function About() {
       icon: <Globe size={24} />,
       title: currentContent.values[2].title,
       text: currentContent.values[2].text
+    },
+    {
+      icon: <Shield size={24} />,
+      title: currentContent.values[3].title,
+      text: currentContent.values[3].text
     }
   ];
 
@@ -602,7 +611,7 @@ function About() {
               </HighlightIcon>
               <HighlightTitle>{currentContent.goalTitle}</HighlightTitle>
                     <HighlightText>
-                      {currentContent.mission}
+                      {currentContent.goalText}
                     </HighlightText>
             </IntroHighlight>
           </IntroGrid>

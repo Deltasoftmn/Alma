@@ -22,6 +22,7 @@ const FooterContainer = styled.footer`
     background: 
       radial-gradient(circle at 20% 20%, rgba(37, 150, 190, 0.05) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(66, 184, 166, 0.05) 0%, transparent 50%);
+    pointer-events: none;
   }
 `;
 
@@ -29,6 +30,8 @@ const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 `;
 
 const FooterTop = styled.div`
@@ -75,6 +78,10 @@ const FooterLink = styled(Link)`
   transition: all 0.3s ease;
   padding: 0.25rem 0;
   border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: inline-block;
 
   &:hover {
     color: #2596be;
@@ -253,7 +260,7 @@ function Footer() {
       address: "Скай Плаза бизнес төв, D хэсэг, 1-р давхар, Элчин сайдын 9-р гудамж, 13-р хороолол, 1-р хороо, Сүхбаатар дүүрэг, Улаанбаатар 14220, Монгол",
       phone: "+97688042323",
       email: "info@almachem.mn",
-      copyright: "© 2024 Alma Chem Trade LLC. Бүх эрх хуулиар хамгаалагдсан.",
+      copyright: "© 2024 Алма Кем Трейд ХХК. Бүх эрх хуулиар хамгаалагдсан.",
       backToTop: "Дээшээ буцах"
     },
     en: {

@@ -199,7 +199,7 @@ function MarketSectors() {
 
   const subtitle = isEnglish
     ? 'Alma Chem Trade LLC delivers engineering, supply, and consulting services across key industries:'
-    : 'Alma Chem Trade LLC нь инженеринг, нийлүүлэлт, зөвлөх үйлчилгээг дараах гол салбаруудад хүргэдэг:';
+    : 'Алма Кем Трейд ХХК нь инженеринг, нийлүүлэлт, зөвлөх үйлчилгээг дараах гол салбаруудад хүргэдэг:';
 
   const bottomNote = isEnglish
     ? 'We support mining chemical operations end-to-end—including usage, process optimization, laboratory testing, monitoring, and commissioning—to ensure consistent, sustainable performance.'
