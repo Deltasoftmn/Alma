@@ -6,29 +6,22 @@ import { usePathname } from "next/navigation";
 import { Globe, Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
-  const navItems = [
+  const navItems = language === "mn" ? [
     { name: "Бидний тухай", href: "/about" },
     { 
       name: "Үйлчилгээ", 
-      href: "/services",
-      submenu: [
-        { name: "Химийн бодисын худалдаа ", href: "/services/1" },
-        { name: "Химийн бодисын аюулгүй хэрэглээ, хадгалалт, агуулахын менежментийн зөвлөгөө", href: "/services/2" },
-      ] 
+      href: "/services"
     },
     { 
       name: "Бүтээгдэхүүн", 
-      href: "/products",
-      submenu: [
-        { name: "Уул уурхайн флотацийн реагентууд", href: "/products/1" },
-        { name: "Замын нэмэлт бүтээгдэхүүн ", href: "/products/2" },
-        { name: "Барилгын материал, түүхий эд", href: "/products/3" }
-      ]
+      href: "/products"
     },
     { name: "Харилцагчид", 
       href: "/clients" ,
@@ -44,17 +37,48 @@ export function Navigation() {
         { name: "Олон улсын зах зээлийн чиг хандлага", href: "/news/1" },
         { name: "Байгаль орчны болон аюулгүй ажиллагааны мэдээлэл", href: "/news/2" },
         { name: "Компанийн үйл ажиллагаа", href: "/news/3" },
-        
       ]
      },
     { name: "Ажлын байр", href: "/jobs",
       submenu: [
         { name: "Нээлттэй ажлын байр", href: "/jobs/1" },
         { name: "Хүний нөөцийн бодлого", href: "/jobs/2" }
-        
       ]
      },
     { name: "Холбоо барих", href: "/contact" },
+  ] : [
+    { name: "About Us", href: "/about" },
+    { 
+      name: "Services", 
+      href: "/services"
+    },
+    { 
+      name: "Products", 
+      href: "/products"
+    },
+    { name: "Clients", 
+      href: "/clients" ,
+      submenu: [
+        { name: "Mining Companies", href: "/clients/1" },
+        { name: "Processing Plants", href: "/clients/2" },
+        { name: "Road & Construction Companies", href: "/clients/3" }
+      ]
+    },
+    { name: "News & Articles", 
+      href: "/news",
+      submenu: [
+        { name: "International Market Trends", href: "/news/1" },
+        { name: "Environmental & Safety News", href: "/news/2" },
+        { name: "Company Activities", href: "/news/3" },
+      ]
+     },
+    { name: "Careers", href: "/jobs",
+      submenu: [
+        { name: "Open Positions", href: "/jobs/1" },
+        { name: "HR Policy", href: "/jobs/2" }
+      ]
+     },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -69,8 +93,9 @@ export function Navigation() {
             
             <div className="hidden md:block pl-12 z-10">
               <p className="text-white/90 text-sm font-medium leading-tight max-w-[300px]">
-                Монголын уул уурхай, аж үйлдвэрийн салбар дахь 
-                найдвартай ханган нийлүүлэгч 
+                {language === "mn" 
+                  ? "Бид чанар, найдвартай байдал, үр ашгийг эрхэмлэнэ." 
+                  : "We value quality, reliability, and efficiency."}
               </p>
             </div>
           </div>
@@ -133,9 +158,12 @@ export function Navigation() {
             </div>
             
             {/* Language Switcher */}
-            <button className="ml-2 px-3 py-1.5 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] font-medium hover:bg-[#00d4ff]/20 transition-colors flex items-center gap-1.5 shadow-md border border-[#00d4ff]/30">
+            <button 
+              onClick={toggleLanguage}
+              className="ml-2 px-3 py-1.5 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] font-medium hover:bg-[#00d4ff]/20 transition-colors flex items-center gap-1.5 shadow-md border border-[#00d4ff]/30"
+            >
               <Globe className="w-4 h-4 text-[#00d4ff]" />
-              <span className="text-sm">МН/EN</span>
+              <span className="text-sm">{language === "mn" ? "EN" : "MN"}</span>
             </button>
           </div>
 
@@ -195,9 +223,15 @@ export function Navigation() {
               
               {/* Mobile Language Switcher */}
               <div className="pt-3 border-t border-white/10 mt-2">
-                <button className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-[#00d4ff]/10 text-[#00d4ff] font-semibold shadow-lg border border-[#00d4ff]/30">
+                <button 
+                  onClick={() => {
+                    toggleLanguage();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-[#00d4ff]/10 text-[#00d4ff] font-semibold shadow-lg border border-[#00d4ff]/30"
+                >
                   <Globe className="w-4 h-4 text-[#00d4ff]" />
-                  <span>МН/EN</span>
+                  <span>{language === "mn" ? "EN" : "MN"}</span>
                 </button>
               </div>
             </div>

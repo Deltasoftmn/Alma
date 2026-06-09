@@ -1,5 +1,8 @@
+"use client";
+
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const Facebook = ({ className }: { className?: string }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -14,27 +17,29 @@ const Linkedin = ({ className }: { className?: string }) => (
 );
 
 export function Footer() {
+  const { language } = useLanguage();
+
   return (
-    <footer className="relative overflow-hidden pt-72 pb-12 text-white">
+    <footer className="relative overflow-hidden pt-2 pb-12 text-white">
       {/* Background Graphic Shapes */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/bg_footer.png')] bg-cover bg-left opacity-90" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -top-10">
-
-
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -top-10">
         {/* Top Centered Text */}
         <div className="text-right max-w-3xl mx-auto mb-20">
-          <p className="text-xl md:text-[30px] font-medium leading-relaxed">
+          {/* <p className="text-xl md:text-[30px] font-medium leading-relaxed">
             Монголын уул уурхайн хөгжилд чанартай, найдвартай бүтээгдэхүүн, инновацын шийдлээр хувь нэмэр оруулан, салбарын тэргүүлэх нийлүүлэгч байна.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           {/* Contact Us */}
           <div className="lg:col-span-4">
-            <h3 className="text-[30px] mb-6">Холбоо барих</h3>
+            <h3 className="text-[30px] mb-6">
+              {language === "mn" ? "Холбоо барих" : "Contact Us"}
+            </h3>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full border border-white flex items-center justify-center flex-shrink-0">
@@ -65,15 +70,27 @@ export function Footer() {
 
           {/* Principal Office */}
           <div className="lg:col-span-5">
-            <h3 className="text-[30px] mb-6">Төв оффис</h3>
+            <h3 className="text-[30px] mb-6">
+              {language === "mn" ? "Төв оффис" : "Head Office"}
+            </h3>
             <div className="flex items-start gap-3">
               <div className="w-6 h-6 rounded-full border border-white flex items-center justify-center flex-shrink-0 mt-0.5">
                 <MapPin className="w-3.5 h-3.5 text-white" />
               </div>
               <p className="text-slate-100 text-sm leading-relaxed">
-                Монгол улс, Улаанбаатар хот 14220, Сүхбаатар дүүрэг, 1-р хороо,<br />
-                13-р хороолол, Элчингийн гудамж 9,<br />
-                Sky Plaza бизнес төв, D хэсэг, 1 давхар
+                {language === "mn" ? (
+                  <>
+                    Монгол улс, Улаанбаатар хот 14220, Сүхбаатар дүүрэг, 1-р хороо,<br />
+                    13-р хороолол, Элчингийн гудамж 9,<br />
+                    Sky Plaza бизнес төв, D хэсэг, 1 давхар
+                  </>
+                ) : (
+                  <>
+                    1st Floor, Section D, Sky Plaza Business Center,<br />
+                    Embassy Street 9, 13th micro-district, 1st khoroo,<br />
+                    Sukhbaatar district, Ulaanbaatar 14220, Mongolia
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -81,7 +98,9 @@ export function Footer() {
           {/* Copyright */}
           <div className="lg:col-span-3 flex lg:items-end lg:justify-end h-full">
             <p className="text-xs text-slate-200 lg:mb-2">
-              © 2026 Алма Кем Трейд ХХК. Бүх эрх хуулиар хамгаалагдсан.
+              {language === "mn" 
+                ? "© 2026 Алма Кем Трейд ХХК. Бүх эрх хуулиар хамгаалагдсан." 
+                : "© 2026 Alma Chem Trade LLC. All rights reserved."}
             </p>
           </div>
         </div>

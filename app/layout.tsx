@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className={`${roboto.className} min-h-full flex flex-col`}>
-        <Navigation />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Navigation />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
