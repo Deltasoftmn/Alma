@@ -221,7 +221,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {language === "mn"
-                    ? "Бид үргэлж шинэлэг санаануудыг эрэлхийлж, салбартаа жинхэнэ үр дүнтэй үйл ажиллагааг нэвтрүүлдэг."
+                    ? "Бид үргэлж шинэлэг санаануудыг эрэлхийлж, салбартаа үр дүнтэй үйл ажиллагааг нэвтрүүлдэг."
                     : "We search for innovative ideas and implement highly effective operations in our sector."}
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {language === "mn"
-                    ? "Бид мэдлэг, ур чадвараа тасралтгүй хөгжүүлж, хөдөлмөрийн аюулгүй байдал, эрүүл ахуйн ил тод стандарт бүхий ажлын байрыг хангадаг."
+                    ? "Бид мэдлэг, ур чадвараа тасралтгүй хөгжүүлж, хөдөлмөрийн аюулгүй байдал, эрүүл ахуйн стандарт бүхий ажлын байрыг хангадаг."
                     : "We continuously develop our skills and maintain workspaces with transparent occupational health and safety standards."}
                 </p>
               </div>
