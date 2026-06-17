@@ -11,7 +11,7 @@ export default function Home() {
   const { language } = useLanguage();
   
   // State for image slider
-  const slides = ["/hero-bg2.png", "/hero-bg2.png", "/hero-bg2.png"];
+  const slides = ["/hero-bg.jpg", "/hero-bg.jpg", "/hero-bg.jpg"];
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   

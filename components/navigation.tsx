@@ -95,7 +95,7 @@ export function Navigation() {
               <p className="text-white/90 text-sm font-medium leading-tight max-w-[300px]">
                 {language === "mn" 
                   ? "Бид чанар, найдвартай байдал, үр ашгийг эрхэмлэнэ." 
-                  : "We value quality, reliability, and efficiency."}
+                  : "We prioritize quality, reliability, and efficiency."}
               </p>
             </div>
           </div>
