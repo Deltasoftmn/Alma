@@ -23,28 +23,6 @@ export function Navigation() {
       name: "Бүтээгдэхүүн", 
       href: "/products"
     },
-    { name: "Харилцагчид", 
-      href: "/clients" ,
-      submenu: [
-        { name: "Уул уурхайн компаниуд", href: "/clients/1" },
-        { name: "Боловсруулах үйлдвэрүүд", href: "/clients/2" },
-        { name: "Зам , барилгын компани", href: "/clients/2" }
-      ]
-    },
-    { name: "Мэдээ, нийтлэл", 
-      href: "/news",
-      submenu: [
-        { name: "Олон улсын зах зээлийн чиг хандлага", href: "/news/1" },
-        { name: "Байгаль орчны болон аюулгүй ажиллагааны мэдээлэл", href: "/news/2" },
-        { name: "Компанийн үйл ажиллагаа", href: "/news/3" },
-      ]
-     },
-    { name: "Ажлын байр", href: "/jobs",
-      submenu: [
-        { name: "Нээлттэй ажлын байр", href: "/jobs/1" },
-        { name: "Хүний нөөцийн бодлого", href: "/jobs/2" }
-      ]
-     },
     { name: "Холбоо барих", href: "/contact" },
   ] : [
     { name: "About Us", href: "/about" },
@@ -56,28 +34,6 @@ export function Navigation() {
       name: "Products", 
       href: "/products"
     },
-    { name: "Clients", 
-      href: "/clients" ,
-      submenu: [
-        { name: "Mining Companies", href: "/clients/1" },
-        { name: "Processing Plants", href: "/clients/2" },
-        { name: "Road & Construction Companies", href: "/clients/3" }
-      ]
-    },
-    { name: "News & Articles", 
-      href: "/news",
-      submenu: [
-        { name: "International Market Trends", href: "/news/1" },
-        { name: "Environmental & Safety News", href: "/news/2" },
-        { name: "Company Activities", href: "/news/3" },
-      ]
-     },
-    { name: "Careers", href: "/jobs",
-      submenu: [
-        { name: "Open Positions", href: "/jobs/1" },
-        { name: "HR Policy", href: "/jobs/2" }
-      ]
-     },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -104,42 +60,8 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-2 z-10">
             <div className="flex items-center gap-1 bg-black/20 backdrop-blur-md rounded-full p-1 border border-white/10">
               {navItems.map((item) => {
-                const isActive = pathname === item.href || (item.submenu && item.submenu.some(sub => pathname === sub.href));
+                const isActive = pathname === item.href;
                 
-                if (item.submenu) {
-                  return (
-                    <div key={item.name} className="relative group">
-                      <button
-                        className={cn(
-                          "px-4 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1 whitespace-nowrap",
-                          isActive
-                            ? "bg-[#00d4ff]/10 text-[#00d4ff] shadow-md border border-[#00d4ff]/50"
-                            : "text-zinc-200 hover:text-white border border-transparent hover:border-white/20"
-                        )}
-                      >
-                        {item.name}
-                        <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      {/* Absolute Dropdown */}
-                      <div className="absolute left-1/2 -translate-x-1/2 pt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div className="bg-slate-950/95 border border-white/10 rounded-2xl p-2 shadow-2xl backdrop-blur-xl">
-                          {item.submenu.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              className="block px-4 py-2.5 text-sm text-zinc-300 hover:text-[#00d4ff] hover:bg-[#00d4ff]/10 hover:border-[#00d4ff]/30 border border-transparent rounded-xl transition-all mb-1 last:mb-0"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                }
-
                 return (
                   <Link
                     key={item.name}
@@ -186,38 +108,18 @@ export function Navigation() {
             <div className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <div key={item.name} className="border-b border-white/5 last:border-none pb-2 last:pb-0">
-                  {item.submenu ? (
-                    <div>
-                      <span className="block font-semibold text-[#00d4ff] px-4 py-1.5 text-sm">
-                        {item.name}
-                      </span>
-                      <div className="flex flex-col gap-1 pl-4 mt-1 border-l-2 border-[#00d4ff]/20 ml-4 mb-2">
-                        {item.submenu.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="block px-4 py-2 text-sm text-zinc-400 hover:text-[#00d4ff] hover:bg-[#00d4ff]/10 rounded-lg transition-all"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={cn(
-                        "block px-4 py-2.5 font-medium rounded-xl text-sm transition-all",
-                        pathname === item.href
-                          ? "bg-[#00d4ff]/20 text-[#00d4ff]"
-                          : "text-zinc-300 hover:text-white hover:bg-white/5"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "block px-4 py-2.5 font-medium rounded-xl text-sm transition-all",
+                      pathname === item.href
+                        ? "bg-[#00d4ff]/20 text-[#00d4ff]"
+                        : "text-zinc-300 hover:text-white hover:bg-white/5"
+                    )}
+                  >
+                    {item.name}
+                  </Link>
                 </div>
               ))}
               

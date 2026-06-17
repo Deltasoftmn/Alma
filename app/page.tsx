@@ -83,8 +83,8 @@ export default function Home() {
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               {language === "mn" 
-                ? "Монголын уул уурхай, үйлдвэрлэлийн найдвартай ханган нийлүүлэгч"
-                : "Reliable Supplier for Mongolian Mining and Industrial Sectors"}
+                ? "Бид чанар, найдвартай байдал, үр ашгийг эрхэмлэнэ."
+                : "We prioritize quality, reliability, and efficiency."}
             </h1>
             
             <p className="text-lg text-slate-300 mb-8 max-w-xl">
@@ -246,48 +246,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Company History Section */}
-      <section className="bg-white pt-24 pb-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <h2 className="text-4xl font-bold text-slate-600">
-            {language === "mn" ? "Компанийн түүх" : "Company History"}
-          </h2>
-        </div>
-        
-        {/* Full width slider area */}
-        <div className="relative w-full h-[600px] overflow-hidden">
-          {/* Background Image placeholder */}
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-[url('/history_background.png')] bg-cover bg-center" />
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-cyan-900/80 to-teal-900/80 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-green-900/30 mix-blend-overlay" />
-          </div>
-
-          {/* Left Arrow */}
-          <button className="absolute left-8 top-1/2 -translate-y-1/2 z-20 text-[#00cbb4] hover:text-white transition-colors">
-            <ChevronLeft className="w-12 h-12 stroke-[2]" />
-          </button>
-
-          {/* Content */}
-          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-            <h3 className="text-5xl font-bold text-white mb-6 leading-tight">
-              {language === "mn" 
-                ? <>Олон улсын стандартад нийцсэн<br />дотоодын туршлага</>
-                : <>Domestic Experience Complying<br />with International Standards</>}
-            </h3>
-            <p className="text-lg text-slate-200 max-w-2xl leading-relaxed">
-              {language === "mn"
-                ? <>Бид Монголын нөхцөл байдлыг ойлгож, бодит амьдрал дээр<br />хэрэгжих шийдлүүдийг хүргэдэг.</>
-                : <>We understand local conditions and deliver practical,<br />real-world solutions.</>}
-            </p>
-            
-            {/* Bottom Arrow button */}
-            <button className="mt-12 w-12 h-12 rounded-full border-2 border-[#00d4ff] flex items-center justify-center group hover:bg-[#00d4ff]/20 transition-colors">
-              <ChevronRight className="w-6 h-6 text-[#00d4ff]" />
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Mission & Vision Section */}
       <section className="pt-24 pb-0 bg-white">
