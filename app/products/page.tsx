@@ -41,8 +41,8 @@ export default function ProductsPage() {
 
       {/* Main Content Section */}
       <section className="py-16 bg-white flex-1">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8 text-slate-700 leading-relaxed text-base md:text-lg">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8 text-slate-700 leading-relaxed text-base md:text-lg text-justify">
             <p>
               {language === "mn"
                 ? "Манай компани нь уул уурхайн флотацийн реагент, замын нэмэлт бүтээгдэхүүн, барилгын материал, түүхий эд болон боловсруулах үйлдвэрлэлийн салбарт өргөн хэрэглэгддэг химийн нэмэлт бодис, технологийн шийдлүүдийг нэвтрүүлэн, үйлдвэрлэлийн үр ашиг, бүтээгдэхүүний чанар, ашиглалтын хугацааг сайжруулахад чиглэсэн өндөр чанартай бүтээгдэхүүнүүдийг хэрэглэгчдэдээ санал болгож байна."
