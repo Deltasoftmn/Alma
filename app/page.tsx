@@ -237,7 +237,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {language === "mn"
-                    ? "Бид мэдлэг, ур чадвараа тасралтгүй хөгжүүлж, хөдөлмөрийн аюулгүй байдал, эрүүл ахуйн стандарт бүхий ажлын байрыг хангадаг."
+                    ? "Бид мэдлэг, ур чадвараа тасралтгүй хөгжүүлж, хөдөлмөрийн аюулгүй байдал, эрүүл ахуйн стандарт бүхий ажлын байраар хангадаг."
                     : "We continuously develop our skills and maintain workspaces with transparent occupational health and safety standards."}
                 </p>
               </div>
